@@ -88,14 +88,14 @@ So finally we connect the app with our node.
 
 
 ## Securing SSH: ##
-There are several ways to secure your SSH connection with 2FA, MFA, client authentification, etc. I will just link some guides:
+There are several ways to secure your SSH connection with 2FA, MFA, client authentification, etc. I will just link some useful guides:
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 
-If you decide to set up OTP-2FA, JuiceSSH will ask for OTP-code as a second factor aside from the specified user's password before access to your node is granted.
+For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP-code as a second factor aside from the specified user's password before access to your node is granted.
 
 _______________________________________________________________
 
-Written by [osito](https://github.com/blckbx). If this guide was of help and you want to share some ♥ and contribution, please feel free to send a small tip to the ⚡ address: 0x382f9cf667447bb8@ln.tips
+Written by [osito](https://github.com/blckbx). If this guide was of help and you want to share some ♥ and appreciation, please feel free to send a small tip to the ⚡ address: 0x382f9cf667447bb8@ln.tips
 
 [Greetings to the ⚡ Plebs!](https://t.me/plebnet)
