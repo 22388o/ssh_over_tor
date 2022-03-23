@@ -12,6 +12,7 @@ A node should have its channels available for lightning payments as much as it c
 - [Remote Access](#remote-access)
 - [Establishing the Connection](#establishing-the-connection)
 - [Securing SSH](#securing-ssh)
+- [Disabling Access](#disabling-access)
 
 ## Preconditions: ##
 
@@ -47,7 +48,7 @@ $ sudo systemctl restart tor
 ````
 on Umbrel-OS:
 ````
-$ cd ~/umbrel && docker-compose reload tor
+$ cd ~/umbrel && docker-compose restart tor
 ````
 
 4) Get the onion address:
@@ -93,6 +94,20 @@ There are several ways to secure your SSH connection with 2FA, MFA, client authe
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 
 For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP-code as a second factor aside from the specified user's password before access to your node is granted.
+
+## Disabling Access: ##
+Back home from vacation we don't need remote access any longer. For security reasons it's advised to reduce risks and therefore we disable unused services.
+
+To do this we comment out the Tor hidden service: `sudo nano /etc/tor/torrc`
+````
+# SSH over Tor
+# HiddenServiceDir /var/lib/tor/ssh
+# HiddenServicePort 22 127.0.0.1:22
+````
+and restart Tor: `sudo systemctl restart tor`
+
+Aaaaand it's gone. 
+
 
 _______________________________________________________________
 
