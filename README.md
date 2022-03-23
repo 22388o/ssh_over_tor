@@ -92,8 +92,9 @@ Finally we connect the app with our node.
 There are several ways to secure a SSH connection: 2FA, MFA, client authentification, etc. I will just link some useful guides here. It's up to your preference what way to go:
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
+- [Client Authorization](https://openoms.github.io/bitcoin-tutorials/tor_hidden_service_example.html#add-client-authorization-optional)
 
-For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP-code as a second factor aside from the specified user's password before access to your node is granted.
+For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP code as a second factor aside from the specified user's password before access to your node is granted.
 
 ## 🛡 Disabling Access: ##
 Back home from vacation we don't need remote access any longer. For security reasons it's advised to reduce risks and therefore we disable unused services.
