@@ -3,7 +3,7 @@
 ## 📄 Prelude and Objective ##
 Running a lightning node requires maintenance of the underlying hard- and software because it should stay in the game for the long run. Most nodes are run by the usual guy and gal next door which definitely means "we got a life out there". Believe it or not ;)
 
-A node should have its channels available for lightning payments as much as it can. Longer downtimes are bad considering lightning a globally active payment network. You don't want to queue up a line of pissed people behind yourself, telling them you currently can't pay because your lightning node has Tor issues, right? So maintenance is crucial and it's good practice if you're able to do it wherever you are. 
+A node should have its channels available for lightning payments as much as it can. Longer downtimes are bad considering lightning as a globally active payment network. You don't want to queue up a line of pissed people behind yourself, telling them you currently can't pay because your lightning node has Tor issues, right? So maintenance is crucial and it's good practice if you're able to do it wherever you are. 
 
 ## 📜 Table of Content ##
 
@@ -25,7 +25,7 @@ Some more assumptions:
 
 ## 🥷 Configuring Tor: ##
 
-1) First we going to add an additional hidden Tor service to our node's setup. To do so SSH into your node and find the needed `torrc` file. Example of paths to this file:
+1) First we going to add an additional hidden Tor service to our node's setup. To do so SSH into your node and find the needed `torrc` file. Some example of paths to find this file:
 ````
 /etc/tor/torrc (Bare Metal / RaspiBolt / RaspiBlitz)
 
@@ -61,19 +61,19 @@ $ sudo cat /var/lib/tor/ssh/hostname
 
 ## 🔑 Remote Access: ##
 
-The node setup is done. Now we're going to setup the remote device. In this guide I will use an android mobile phone and the apps:
+The node setup is done. Now we're going to setup the remote device. In this guide I will use an android mobile phone and the following apps:
 - [Orbot (Tor client)](https://github.com/guardianproject/orbot)
 - [JuiceSSH](https://juicessh.com) (for iOS: there's Termius or whatever you like)
 
 Setup the app the following way:
 1) Open Orbot and add JuiceSSH to `tor-activated apps` list
 2) Start Orbot (connect to Tor network)
-3) Open JuiceSSH within Orbit
+3) Open JuiceSSH within Orbot
 4) Create a new identity with your node's main user (Umbrel's user is named `umbrel`)
 5) Create a new connection and set up the following parameters:
 - Name: < name your node nicely >
 - Address: 3uz5g2i5g43gtihit7h32t2itgxxxxxxxxxxxxxxxxx.onion (onion address we wrote down or saved before)
-- Port: 22 (ssh port from hidden service and openssh-server (if we configured it manually))
+- Port: 22 (default ssh port from hidden service)
 
 
 Save your configs. That's it. 
@@ -81,7 +81,7 @@ Save your configs. That's it.
 
 ## 📲 Establishing the Connection: ##
 
-So finally we connect the app with our node. 
+Finally we connect the app with our node. 
 1) Open Orbot and start Tor
 2) Start JuiceSSH from within Orbot
 3) Select your setup node connection and wait for it to establish (may take a little while)
@@ -89,7 +89,7 @@ So finally we connect the app with our node.
 
 
 ## 🔐 Securing SSH: ##
-There are several ways to secure your SSH connection with 2FA, MFA, client authentification, etc. I will just link some useful guides:
+There are several ways to secure a SSH connection: 2FA, MFA, client authentification, etc. I will just link some useful guides here. It's up to your preference what way to go:
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 
