@@ -92,7 +92,7 @@ There are several ways to secure your SSH connection with 2FA, MFA, client authe
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 
-If you decide to do with OTP-2FA, JuiceSSH will ask for OTP-Code as a second factor aside from the specified user's password.
+If you decide to go with OTP-2FA, JuiceSSH will ask for OTP-Code as a second factor aside from the specified user's password before access to your node is granted.
 
 _______________________________________________________________
 
