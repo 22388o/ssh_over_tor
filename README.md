@@ -1,11 +1,11 @@
-# Remote Node Management: SSH over Tor
+# 🏖 Remote Node Management: SSH over Tor
 
-## Prelude and Objective ##
+## 📄 Prelude and Objective ##
 Running a lightning node requires maintenance of the underlying hard- and software because it should stay in the game for the long run. Most nodes are run by the usual guy and gal next door which definitely means "we got a life out there". Believe it or not ;)
 
 A node should have its channels available for lightning payments as much as it can. Longer downtimes are bad considering lightning a globally active payment network. You don't want to queue up a line of pissed people behind yourself, telling them you currently can't pay because your lightning node has Tor issues, right? So maintenance is crucial and it's good practice if you're able to do it wherever you are. 
 
-## Table of Content ##
+## 📜 Table of Content ##
 
 - [Preconditions](#preconditions)
 - [Configuring Tor](#configuring-tor)
@@ -14,7 +14,7 @@ A node should have its channels available for lightning payments as much as it c
 - [Securing SSH](#securing-ssh)
 - [Disabling Access](#disabling-access)
 
-## Preconditions: ##
+## 🔎 Preconditions: ##
 
 Setting up SSH over Tor requires some technical knowledge about the infrastructure of your node. This guide is based on a bare metal setup assuming this can also be done on Umbrel-OS, RaspiBolt, RaspiBlitz and MyNode setups as well. But don't take it for granted! Please, DYOR.
 
@@ -23,7 +23,7 @@ Some more assumptions:
 - SSH service is installed (if not `sudo apt-get install openssh-server`)
 - Tor client available on mobile phone ([Orbot](https://github.com/guardianproject/orbot))
 
-## Configuring Tor: ##
+## 🥷 Configuring Tor: ##
 
 1) First we going to add an additional hidden Tor service to our node's setup. To do so SSH into your node and find the needed `torrc` file. Example of paths to this file:
 ````
@@ -59,7 +59,7 @@ $ sudo cat /var/lib/tor/ssh/hostname
 ````
 
 
-## Remote Access: ##
+## 🔑 Remote Access: ##
 
 The node setup is done. Now we're going to setup the remote device. In this guide I will use an android mobile phone and the apps:
 - [Orbot (Tor client)](https://github.com/guardianproject/orbot)
@@ -79,7 +79,7 @@ Setup the app the following way:
 Save your configs. That's it. 
 
 
-## Establishing the Connection: ##
+## 📲 Establishing the Connection: ##
 
 So finally we connect the app with our node. 
 1) Open Orbot and start Tor
@@ -88,14 +88,14 @@ So finally we connect the app with our node.
 4) Send your first command on terminal
 
 
-## Securing SSH: ##
+## 🔐 Securing SSH: ##
 There are several ways to secure your SSH connection with 2FA, MFA, client authentification, etc. I will just link some useful guides:
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 
 For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP-code as a second factor aside from the specified user's password before access to your node is granted.
 
-## Disabling Access: ##
+## 🛡 Disabling Access: ##
 Back home from vacation we don't need remote access any longer. For security reasons it's advised to reduce risks and therefore we disable unused services.
 
 To do this we comment out the Tor hidden service: `sudo nano /etc/tor/torrc`
