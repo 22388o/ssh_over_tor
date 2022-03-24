@@ -26,37 +26,37 @@ Some more assumptions:
 ## 🥷 Configuring Tor: ##
 
 1) First we going to add an additional hidden Tor service to our node's setup. To do so SSH into your node and find the needed `torrc` file. Some example of paths to find this file:
-````
+```sh
 /etc/tor/torrc (Bare Metal / RaspiBolt / RaspiBlitz)
 
 ~/umbrel/tor/torrc (Umbrel-OS)
-````
+```
 
 2) Open `torrc` with `sudo nano /etc/tor/torrc` (path from above), look for the section which contains the hidden services and add the following entry:
-````
+```tor
 # SSH over Tor
 HiddenServiceDir /var/lib/tor/ssh
 HiddenServicePort 22 127.0.0.1:22
-````
+```
 `HiddenServiceDir` may be adjusted to another path, look for other hidden services and their corresponding dirs to match them.
 
 3) Reload Tor config:
 
 on bare metal:
-````
+```sh
 $ sudo systemctl restart tor
-````
+```
 on Umbrel-OS:
-````
+```sh
 $ cd ~/umbrel && docker-compose restart tor
-````
+```
 
 4) Get the onion address:
 Get the hostname / onion address with the following command. Because it's a long address, it's good to save it to file or write it down manually because we need to type in the address on the remote device. 
-````
+```sh
 $ sudo cat /var/lib/tor/ssh/hostname
 3uz5g2i5g43gtihit7h32t2itgxxxxxxxxxxxxxxxxx.onion
-````
+```
 
 
 ## 🔑 Remote Access: ##
@@ -100,11 +100,11 @@ For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP code as 
 Back home from vacation we don't need remote access any longer. For security reasons it's advised to reduce risks and therefore we disable unused services.
 
 To do this we comment out the Tor hidden service: `sudo nano /etc/tor/torrc`
-````
+```
 # SSH over Tor
 # HiddenServiceDir /var/lib/tor/ssh
 # HiddenServicePort 22 127.0.0.1:22
-````
+```
 and restart Tor: `sudo systemctl restart tor`
 
 Aaaaand it's gone. 
