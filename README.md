@@ -89,7 +89,7 @@ Finally we connect the app with our node.
 
 
 ## 🔐 Securing SSH: ##
-There are several ways to secure a SSH connection: FIDO, 2FA, MFA, client authorization, etc. I will just link some useful guides here. It's up to your preference what way to go:
+There are several ways to secure a SSH connection: FIDO, 2FA, MFA, client authorization, etc. I will just link some useful guides here. It's up to your preference which way to go:
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 - [Client Authorization](https://openoms.github.io/bitcoin-tutorials/tor_hidden_service_example.html#add-client-authorization-optional)
