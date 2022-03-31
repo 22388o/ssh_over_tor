@@ -93,6 +93,7 @@ There are several ways to secure a SSH connection: FIDO, 2FA, MFA, client author
 - [Yubikey](https://developers.yubico.com/yubico-pam/YubiKey_and_SSH_via_PAM.html)
 - [OTP-2FA](https://www.simplified.guide/ssh/use-otp-2fa)
 - [Client Authorization](https://openoms.github.io/bitcoin-tutorials/tor_hidden_service_example.html#add-client-authorization-optional)
+- [Hardware-based SSH key](https://plebnet.wiki/wiki/Node_Hardening#Hardware-based_SSH_keys)
 
 For example: If you decide to set up OTP-2FA, JuiceSSH will ask for OTP code as a second factor aside from the specified user's password before access to your node is granted.
 
